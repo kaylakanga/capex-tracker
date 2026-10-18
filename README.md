@@ -10,6 +10,12 @@ The demo dataset follows a fictional project: **The Sankofa Centre — Black Art
 
 All figures are **sample data for a fictional project**, created to demonstrate the workflows. Real client project data is confidential and would never appear here.
 
+## Why this project
+
+I chose a Black arts and community hub on purpose. Art tells a people's story — who they are, where they've been, what they're building next — and the buildings that hold that art deserve the same engineering care as any plant or tower. I'm proudly pro-Black and committed to Black people thriving in technical spaces; a project like this is where the engineer in me and the community in me meet.
+
+It's also a genuinely great delivery challenge: phased construction in a building that never closes, heritage details you can't fake, and a performance hall where the acoustics have to be right on opening night. The Sankofa Centre is fictional — but the kind of work it represents is exactly the kind I want to do for real.
+
 ## What it does
 
 - **KPI header** — original budget, revised budget, actual cost, committed cost, forecast at completion (EAC), percent complete, and schedule status

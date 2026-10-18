@@ -12,7 +12,7 @@ The centre, its team, and every figure are **illustrative estimates created for 
 
 ## Why this project
 
-I chose an arts and community hub on purpose. Art tells a people's story — who they are, where they've been, what they're building next — and the buildings that hold that art deserve the same engineering care as any plant or tower. I'm proudly pro-Black and committed to Black people thriving in technical spaces; a case study like this is where the engineer in me and the community in me meet. And the main thing about me is that I love to learn — it's how I live my life — so of course my showcase project is one I'd learn something real from.
+I chose an arts and community hub on purpose. Arts and community spaces hold a neighbourhood's history and identity, and the buildings that house them deserve the same standard of engineering care as any plant or tower. I am committed to strong community outcomes in the work I take on, and to broadening participation in engineering and technical fields — a case study like this is where delivery discipline and community impact meet. Continuous learning is central to how I work, so my showcase project had to be one I would learn something real from.
 
 It's also a genuinely great delivery challenge: phased construction in a building that never closes, a heritage façade you can't fake, a performance hall where the acoustics have to be right on opening night, and a solar system that has to carry the show when the grid goes down. The kind of work this case study represents is exactly the kind I want to do for real.
 

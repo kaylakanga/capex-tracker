@@ -6,17 +6,15 @@ A front-end dashboard for tracking a capital project's money, schedule, and pape
 
 ## The sample project
 
-The demo dataset follows a fictional project: **The Sankofa Centre — Black Arts & Community Hub Expansion, Soweto, Johannesburg.** An R86.4M renovation and expansion of a Black-led arts and community centre, delivered in phases *while the centre stays open*. Phased occupancy, a heritage brick façade, a performance hall build-out, and a rooftop solar + battery system (so performances run uninterrupted through load-shedding) make it a genuinely interesting delivery problem, not just a spreadsheet.
+This dashboard is an independent project-controls **case study**. The demo dataset models a project in a real setting: **The Maboneng Arts Centre — Arts & Community Hub Expansion, Johannesburg**, in the Maboneng Precinct, a working arts district. An R86.4M renovation and expansion of an arts and community centre, delivered in phases *while the centre stays open*. Phased occupancy, a heritage brick façade, a performance hall build-out, and a rooftop solar + battery system (so performances run uninterrupted through load-shedding) make it a genuinely interesting delivery problem, not just a spreadsheet.
 
-The centre is invented, but it is *inspired by a true story*: South Africa's real tradition of township arts centres — places like the Soweto Theatre — that kept art and community alive against the odds. This project is a tribute to that tradition, not affiliated with any real institution.
-
-All figures are **sample data for a fictional project**, created to demonstrate the workflows. Real client project data is confidential and would never appear here.
+The centre, its team, and every figure are **illustrative estimates created for demonstration** — the setting and the problem are real; the numbers are mine, built to show the workflows. Real client project data is confidential and would never appear here.
 
 ## Why this project
 
-I chose this on purpose. Sankofa is a Ghanaian (Akan) symbol — *go back and fetch it*: learn from the past to build the future. Placing the centre in Soweto ties that symbol to South African soil, to a Black Canadian engineer building her career an ocean away — the diaspora in one project. Art tells a people's story — who they are, where they've been, what they're building next — and the buildings that hold that art deserve the same engineering care as any plant or tower. I'm proudly pro-Black and committed to Black people thriving in technical spaces; a project like this is where the engineer in me and the community in me meet. And the main thing about me is that I love to learn — it's how I live my life — so of course my showcase project is one I'd learn something real from.
+I chose an arts and community hub on purpose. Art tells a people's story — who they are, where they've been, what they're building next — and the buildings that hold that art deserve the same engineering care as any plant or tower. I'm proudly pro-Black and committed to Black people thriving in technical spaces; a case study like this is where the engineer in me and the community in me meet. And the main thing about me is that I love to learn — it's how I live my life — so of course my showcase project is one I'd learn something real from.
 
-It's also a genuinely great delivery challenge: phased construction in a building that never closes, a heritage façade you can't fake, a performance hall where the acoustics have to be right on opening night, and a solar system that has to carry the show when the grid goes down. The Sankofa Centre is fictional — but the kind of work it represents is exactly the kind I want to do for real.
+It's also a genuinely great delivery challenge: phased construction in a building that never closes, a heritage façade you can't fake, a performance hall where the acoustics have to be right on opening night, and a solar system that has to carry the show when the grid goes down. The kind of work this case study represents is exactly the kind I want to do for real.
 
 ## What it does
 
@@ -25,7 +23,7 @@ It's also a genuinely great delivery challenge: phased construction in a buildin
 - **Milestone timeline** — phase-by-phase delivery progress across design, heritage approvals, construction phases, and handover
 - **Change order log** — every change with cost and schedule impact and status (approved / pending / rejected); approved changes roll up into the revised budget automatically
 - **RFI log** — open, answered, and overdue requests for information with owners and due dates
-- **Cost breakdown by division** — earthworks & civils, structure, heritage façade restoration, interiors, performance systems, and rooftop solar & storage
+- **Cost breakdown by division** — earthworks & civils, structure, heritage brick façade restoration, interiors & community kitchen, performance systems, and rooftop solar & storage
 - **"How It Works"** — a plain-language explanation of earned value, change management, and RFI tracking for anyone new to project controls
 
 Every number on the page is computed from one dataset, so the dashboard reconciles: division budgets total the R86.4M budget, actuals total the reported actual cost, and approved change orders (+R2,162,700) produce the revised budget of R88,562,700.

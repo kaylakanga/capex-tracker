@@ -8,54 +8,54 @@
     <title>CapEx Tracker — Capital Project Delivery Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
     <style>
       :root {
-        --bg: #eef2f4;
+        --bg: #f2eef7;
         --surface: #ffffff;
-        --surface-2: #f4f7f9;
-        --ink: #16222c;
-        --muted: #5a6d7c;
-        --faint: #8496a5;
-        --line: #d8e1e8;
-        --line-strong: #bccbd6;
-        --teal: #0d7a86;
-        --teal-soft: #e2f2f3;
-        --amber: #b45309;
-        --amber-strong: #d97706;
-        --amber-soft: #fdf0dd;
+        --surface-2: #f6f1fb;
+        --ink: #231434;
+        --muted: #67517d;
+        --faint: #9a86b3;
+        --line: #e1d4ee;
+        --line-strong: #c8b4dd;
+        --teal: #6d28d9;
+        --teal-soft: #ece1fb;
+        --amber: #9a6a06;
+        --amber-strong: #cf9a10;
+        --amber-soft: #faf0d4;
         --green: #177a4c;
         --green-soft: #e2f3ea;
         --red: #b3352b;
         --red-soft: #fae7e5;
-        --banner: #101e29;
-        --banner-2: #16293a;
-        --banner-ink: #eef4f7;
-        --banner-muted: #9db2c1;
-        --shadow: 0 1px 2px rgba(16, 32, 44, .06), 0 4px 14px rgba(16, 32, 44, .05);
+        --banner: #21073c;
+        --banner-2: #3b1163;
+        --banner-ink: #f7f1fd;
+        --banner-muted: #c6abe2;
+        --shadow: 0 1px 2px rgba(46, 16, 82, .07), 0 4px 14px rgba(46, 16, 82, .06);
         --radius: 10px;
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #0b1219;
-          --surface: #131f2a;
-          --surface-2: #182735;
-          --ink: #e7eff4;
-          --muted: #9db0bf;
-          --faint: #6d8496;
-          --line: #26394a;
-          --line-strong: #38536a;
-          --teal: #35b6c2;
-          --teal-soft: #12333a;
-          --amber: #f0a63f;
-          --amber-strong: #f5b95c;
-          --amber-soft: #3a2c14;
+          --bg: #130826;
+          --surface: #1f1036;
+          --surface-2: #281847;
+          --ink: #f1eafa;
+          --muted: #c0a9da;
+          --faint: #8f77ae;
+          --line: #3a2560;
+          --line-strong: #513a7d;
+          --teal: #a78bfa;
+          --teal-soft: #2f1d54;
+          --amber: #f2c14e;
+          --amber-strong: #f6d06e;
+          --amber-soft: #40320f;
           --green: #4cc38a;
           --green-soft: #14342a;
           --red: #f0837a;
           --red-soft: #3d1f1d;
-          --banner: #0a151f;
-          --banner-2: #101f2d;
+          --banner: #170731;
+          --banner-2: #25104c;
           --shadow: 0 1px 2px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25);
         }
       }
@@ -74,9 +74,12 @@
 
       /* ---------- Banner ---------- */
       .banner {
-        background: linear-gradient(160deg, var(--banner-2), var(--banner) 70%);
+        background: linear-gradient(155deg, var(--banner-2), var(--banner) 72%);
         color: var(--banner-ink);
-        border-bottom: 3px solid var(--amber-strong);
+      }
+      .banner::before {
+        content: ""; display: block; height: 5px;
+        background: linear-gradient(90deg, #1e8a4c 0 33.4%, #e9b90f 33.4% 66.7%, #c23a2e 66.7% 100%);
       }
       .banner-inner { max-width: 1180px; margin: 0 auto; padding: 22px 20px 20px; }
       .brand-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
@@ -85,7 +88,7 @@
         background: var(--amber-strong); color: #14100a;
         display: grid; place-items: center;
       }
-      .brand-name { font-weight: 700; font-size: 17px; letter-spacing: .01em; }
+      .brand-name { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 18px; letter-spacing: .01em; }
       .brand-sub { color: var(--banner-muted); font-size: 12.5px; }
       .sample-badge {
         margin-left: auto;
@@ -93,7 +96,7 @@
         color: #ffd9a0; border: 1px solid rgba(245, 185, 92, .55);
         padding: 4px 10px; border-radius: 999px; white-space: nowrap;
       }
-      .project-title { margin: 16px 0 4px; font-size: clamp(22px, 4.5vw, 32px); font-weight: 700; line-height: 1.15; }
+      .project-title { margin: 16px 0 4px; font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-size: clamp(24px, 4.5vw, 34px); font-weight: 700; line-height: 1.18; letter-spacing: .005em; }
       .project-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--banner-muted); font-size: 13.5px; }
       .project-meta b { color: var(--banner-ink); font-weight: 600; }
       .health-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
@@ -218,7 +221,7 @@
       }
       .chip .n { font-variant-numeric: tabular-nums; opacity: .75; font-weight: 500; }
       .chip[aria-pressed="true"] { background: var(--banner); color: var(--banner-ink); border-color: var(--banner); }
-      @media (prefers-color-scheme: dark) { .chip[aria-pressed="true"] { background: var(--teal); border-color: var(--teal); color: #06272b; } }
+      @media (prefers-color-scheme: dark) { .chip[aria-pressed="true"] { background: var(--teal); border-color: var(--teal); color: #22103f; } }
 
       /* ---------- Tables ---------- */
       .table-scroll { overflow-x: auto; }
@@ -246,7 +249,7 @@
       /* ---------- About / How it works ---------- */
       .concept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
       .concept { padding: 18px; }
-      .concept h3 { margin: 0 0 6px; font-size: 15.5px; }
+      .concept h3 { margin: 0 0 6px; font-family: "Playfair Display", Georgia, serif; font-size: 17.5px; }
       .concept p { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
       .concept p:last-child { margin-bottom: 0; }
       .concept .tag { font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--amber); }
@@ -305,11 +308,11 @@
           </div>
           <span class="sample-badge">Sample data · Demonstration</span>
         </div>
-        <h1 class="project-title">The Sankofa Centre — Black Arts &amp; Community Hub Expansion, Toronto</h1>
+        <h1 class="project-title">The Sankofa Centre — Black Arts &amp; Community Hub Expansion, Soweto</h1>
         <div class="project-meta">
           <span>Client: <b>The Sankofa Centre — fictional Black-led arts &amp; community centre</b></span>
-          <span>Location: <b>Toronto, Ontario</b></span>
-          <span>Program: <b>May 2027 – Feb 2028</b></span>
+          <span>Location: <b>Soweto, Johannesburg, South Africa</b></span>
+          <span>Programme: <b>May 2027 – Feb 2028</b></span>
           <span>Status date: <b>Oct 31, 2027</b></span>
         </div>
         <div class="health-row">
@@ -335,7 +338,7 @@
         <div class="card">
           <div class="card-head">
             <h2>Earned Value S-Curve</h2>
-            <span class="sub">Cumulative $ · hover or tap the chart for monthly values</span>
+            <span class="sub">Cumulative rand · hover or tap the chart for monthly values</span>
           </div>
           <div class="card-body">
             <div class="chart-wrap" id="chartWrap">
@@ -384,7 +387,7 @@
             <div class="chips" id="coChips" role="group" aria-label="Filter change orders by status"></div>
             <div class="table-scroll">
               <table>
-                <caption>Costs in CAD. Positive schedule impact = days added to the program.</caption>
+                <caption>Costs in ZAR (South African rand). Positive schedule impact = days added to the programme.</caption>
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
@@ -439,9 +442,9 @@
             <h3>Earned Value &amp; the S-Curve</h3>
             <p>An S-curve compares three numbers every month: what you <b>planned</b> to have built (PV), what you <b>actually built</b>, priced at budget rates (EV), and what you <b>actually spent</b> (AC). Because construction ramps up slowly, peaks mid-project, and tapers at close-out, the cumulative lines form an “S”.</p>
             <ul>
-              <li><b>CPI = EV ÷ AC.</b> Below 1.0 means every dollar of work is costing more than a dollar. Here: 0.95.</li>
+              <li><b>CPI = EV ÷ AC.</b> Below 1.0 means every rand of work completed is costing more than a rand. Here: 0.95.</li>
               <li><b>SPI = EV ÷ PV.</b> Below 1.0 means less work is done than planned — behind schedule. Here: 0.95.</li>
-              <li><b>Forecast at completion</b> projects today's efficiency to the end: budget ÷ CPI ≈ $5.06M.</li>
+              <li><b>Forecast at completion</b> projects today's efficiency to the end: budget ÷ CPI ≈ R91.1M.</li>
             </ul>
           </article>
           <article class="card concept">
@@ -449,8 +452,8 @@
             <h3>Change Management</h3>
             <p>No scope change is “free”. Each change order is priced for cost <i>and</i> schedule impact, then formally approved, kept pending for a decision, or rejected — before the work happens, not after the invoice arrives.</p>
             <ul>
-              <li><b>Approved</b> changes roll into the revised budget ($4.92M here).</li>
-              <li><b>Pending</b> changes are tracked as exposure ($95.9K) so leadership sees the risk early.</li>
+              <li><b>Approved</b> changes roll into the revised budget (R88.56M here).</li>
+              <li><b>Pending</b> changes are tracked as exposure (R1.73M) so leadership sees the risk early.</li>
               <li><b>Rejected</b> changes stay on the log — the audit trail matters at close-out.</li>
             </ul>
           </article>
@@ -466,10 +469,10 @@
           </article>
         </div>
         <div class="card about-note">
-          <b>Why I chose this project.</b> I chose a Black arts and community hub on purpose. Art tells a people's story — who they are, where they've been, and what they're building next — and the buildings that hold that art deserve the same engineering care as any plant or tower. I'm proudly pro-Black and committed to seeing Black people thrive in technical spaces; this is where the engineer in me and the community in me meet. My curiosity doesn't stop at project delivery, either: as a Mechanical &amp; AI Systems engineer, I'm drawn to mechanical design, robotics and mechatronics, automation, controls, and applied AI — more than any one lane, I love to learn, and that's how I live my life. It also makes for a serious delivery challenge: phased construction in a building that never closes, heritage details to protect, and performance-hall acoustics to get right. The Sankofa Centre itself is a fictional sample project — I chose it as the showcase because the kind of work it represents is exactly what I want to do for real.
+          <b>Why I chose this project.</b> Sankofa is an Akan symbol from Ghana: go back and fetch what was left behind — learn from the past to build the future. I named this centre for it, and I set it in Soweto, Johannesburg, because that pairing is the whole story in one project: a Ghanaian idea, South African soil, and a Black Canadian engineer drawing the threads together — the diaspora, building. Art tells a people's story — who they are, where they've been, and what they're building next — and the buildings that hold that art deserve the same engineering care as any plant or tower. I'm proudly pro-Black and committed to seeing Black people thrive in technical spaces; this is where the engineer in me and the community in me meet. It is also a serious delivery challenge: phased construction in a building that never closes, heritage brickwork to protect, performance-hall acoustics to get right, and rooftop solar with battery storage so the show goes on through load-shedding. My curiosity doesn't stop at project delivery, either: as a Mechanical &amp; AI Systems engineer I'm drawn to mechanical design, robotics and mechatronics, automation, controls, and applied AI — because the main thing about me is that I love to learn, and that's how I live my life. The Sankofa Centre itself is a fictional sample project — my invented showcase — chosen because the kind of work it represents is exactly what I want to do for real.
         </div>
         <div class="card about-note">
-          <b>About this project.</b> The Sankofa Centre is a fictional Black-led arts and community centre in Toronto. Its $4.8M renovation and expansion is delivered in phases while the centre stays open — the central project-management challenge — so work zones, safe egress, dust and noise controls, and evening programming all have to be coordinated alongside cost and schedule. CapEx Tracker demonstrates the reporting rhythm used to manage that work: monthly status reporting, earned-value cost control, change and RFI logs, and close-out tracking. The workflows mirror the capital-project delivery work I supported during my project management internship at JLL. <b>All data shown is sample data for this fictional project — never real client data.</b> Real project data is confidential; these realistic sample numbers demonstrate the workflows end to end.
+          <b>About this project.</b> The Sankofa Centre is a fictional Black-led arts and community centre in Soweto, Johannesburg. The concept is inspired by the real tradition of South African township arts centres — institutions like the Soweto Theatre show what a world-class performance venue rooted in its own community looks like — but this centre, its people, and every figure here are invented; there is no affiliation with any real institution. Its R86.4M renovation and expansion is delivered in phases while the centre stays open — the central project-management challenge — so work zones, safe egress, dust and noise controls, and evening programmes all have to be coordinated alongside cost and schedule, with rooftop solar and battery storage keeping performances running through load-shedding. CapEx Tracker demonstrates the reporting rhythm used to manage that work: monthly status reporting, earned-value cost control, change and RFI logs, and close-out tracking. The workflows mirror the capital-project delivery work I supported during my project management internship at JLL. <b>All data shown is sample data for this fictional project — never real client data.</b> Real project data is confidential; these realistic sample numbers demonstrate the workflows end to end.
         </div>
       </section>
     </div>
@@ -484,64 +487,65 @@
     <script>
       /* ================= Sample dataset (fictional) =================
          All KPIs, variances and forecasts are derived from these series
-         so every number on the page reconciles. Dollars in CAD.        */
-      var BAC = 4800000;               // original budget at completion
-      var COMMITTED = 3420000;         // actuals + open purchase orders
+         so every number on the page reconciles. South African rand (ZAR).        */
+      var BAC = 86400000;              // original budget at completion
+      var COMMITTED = 61560000;        // actuals + open purchase orders
       var SCHEDULE_SLIP_DAYS = 6;      // working days behind baseline
       var MONTHS = ["May 27","Jun 27","Jul 27","Aug 27","Sep 27","Oct 27","Nov 27","Dec 27","Jan 28","Feb 28"];
       var MONTH_FULL = ["May 2027","June 2027","July 2027","August 2027","September 2027","October 2027","November 2027","December 2027","January 2028","February 2028"];
-      var PV = [120000,380000,760000,1280000,1900000,2620000,3380000,3980000,4480000,4800000];
-      var EV = [105000,345000,700000,1200000,1800000,2480000,null,null,null,null];
-      var AC = [115000,370000,745000,1265000,1905000,2615000,null,null,null,null];
+      var PV = [2160000,6840000,13680000,23040000,34200000,47160000,60840000,71640000,80640000,86400000];
+      var EV = [1890000,6210000,12600000,21600000,32400000,44640000,null,null,null,null];
+      var AC = [2070000,6660000,13410000,22770000,34290000,47070000,null,null,null,null];
       var STATUS_IDX = 5; // October 2027
 
       var MILESTONES = [
-        { name: "Design Development Complete", date: "Jun 18, 2027", state: "done",    note: "Final design package approved while spring programming continued" },
-        { name: "Heritage Review & Permits",   date: "Jul 30, 2027", state: "done",    note: "Heritage review cleared; City of Toronto permits issued" },
-        { name: "Phased Mobilization — Wing A", date: "Aug 9, 2027",  state: "done",    note: "Wing A isolated for construction; the rest of the centre stayed open" },
-        { name: "Structure & Envelope",        date: "Sep 24, 2027", state: "done",    note: "New structure tied into the existing building; envelope sealed for Phase 2" },
-        { name: "Performance Hall Fit-Out",    date: "Nov 12, 2027", state: "active",  note: "Acoustic treatment, rigging, seating and AV infrastructure underway", pct: 72 },
-        { name: "Gallery & Community Wing",    date: "Dec 17, 2027", state: "upcoming", note: "Exhibition lighting, classrooms and flexible community rooms" },
-        { name: "Final Phase Handover",        date: "Jan 28, 2028", state: "upcoming", note: "Wing B turnover, deficiency review, systems training and close-out documents" },
+        { name: "Design Development Complete", date: "Jun 18, 2027", state: "done",    note: "Final design package approved while the centre's programmes continued" },
+        { name: "Heritage Review & Municipal Approvals", date: "Jul 30, 2027", state: "done", note: "Heritage review of the original brickwork cleared; City of Joburg building plans approved" },
+        { name: "Phased Mobilisation — Wing A", date: "Aug 9, 2027",  state: "done",    note: "Wing A isolated for construction; the rest of the centre stayed open" },
+        { name: "Structure & Envelope",        date: "Sep 24, 2027", state: "done",    note: "New concrete frame tied into the existing building; envelope sealed for Phase 2" },
+        { name: "Performance Hall Fit-Out",    date: "Nov 12, 2027", state: "active",  note: "Acoustic treatment, stage rigging, seating and AV infrastructure under way", pct: 72 },
+        { name: "Gallery & Studios Wing",      date: "Dec 17, 2027", state: "upcoming", note: "Exhibition lighting, rehearsal studios and flexible community rooms" },
+        { name: "Final Phase Handover",        date: "Jan 28, 2028", state: "upcoming", note: "Wing B turnover, snag-list review, systems training and close-out documents" },
         { name: "Grand Reopening",             date: "Feb 25, 2028", state: "upcoming", note: "Full-centre reopening and community celebration" }
       ];
 
       var DIVISIONS = [
-        { name: "General Conditions",         budget: 480000, actual: 240000 },
-        { name: "Site & Accessibility",       budget: 480000, actual: 505000 },
-        { name: "Structure",                  budget: 1560000, actual: 1665000 },
-        { name: "Envelope & Heritage",        budget: 720000, actual: 60000 },
-        { name: "Interiors",                   budget: 540000, actual: 0 },
-        { name: "Performance Systems",        budget: 1020000, actual: 145000 }
+        { name: "Preliminaries & General Conditions",    budget: 8640000, actual: 4320000 },
+        { name: "Earthworks & Civils",                   budget: 8640000, actual: 9090000 },
+        { name: "Structure & Concrete Frame",            budget: 28080000, actual: 29970000 },
+        { name: "Heritage Brick Façade & Envelope",      budget: 12960000, actual: 1080000 },
+        { name: "Gallery, Studios & Interiors",           budget: 9720000, actual: 0 },
+        { name: "Performance Hall — Acoustics & Rigging", budget: 12240000, actual: 1710000 },
+        { name: "Rooftop Solar, Battery & Kitchen",       budget: 6120000, actual: 900000 }
       ];
 
       var CHANGE_ORDERS = [
-        { id: "CO-001", desc: "Acoustic treatment upgrade for the performance hall — absorptive wall panels and ceiling baffles", cost: 86500, days: 5, status: "Approved" },
-        { id: "CO-002", desc: "Heritage window restoration — repair, reglaze and weather-seal the original front windows", cost: 42300, days: 0, status: "Approved" },
-        { id: "CO-003", desc: "Added accessible entrance ramp and automatic door operators (owner request)", cost: 18750, days: 0, status: "Approved" },
-        { id: "CO-004", desc: "Value engineering — simplify non-heritage rear cladding, credit back to owner", cost: -27400, days: 0, status: "Approved" },
-        { id: "CO-005", desc: "Kitchen/café fit-out change — expanded servery and community kitchen equipment", cost: 64000, days: 3, status: "Pending" },
-        { id: "CO-006", desc: "Phased-occupancy protection — temporary partitions, dust control and after-hours work during evening programs", cost: 31900, days: 2, status: "Pending" },
-        { id: "CO-007", desc: "Premium for accelerated heritage masonry delivery (expedite fee)", cost: 22600, days: -4, status: "Rejected" }
+        { id: "CO-001", desc: "Acoustic treatment upgrade for the performance hall — absorptive wall panels and ceiling baffles", cost: 1557000, days: 5, status: "Approved" },
+        { id: "CO-002", desc: "Heritage brick façade restoration — repoint, repair and weatherproof the original brickwork", cost: 761400, days: 0, status: "Approved" },
+        { id: "CO-003", desc: "Added universal-access entrance ramp and automatic door operators (owner request)", cost: 337500, days: 0, status: "Approved" },
+        { id: "CO-004", desc: "Value engineering — simplify non-heritage rear cladding, credit back to owner", cost: -493200, days: 0, status: "Approved" },
+        { id: "CO-005", desc: "Community kitchen fit-out change — expanded servery and equipment for the centre's feeding programme", cost: 1152000, days: 3, status: "Pending" },
+        { id: "CO-006", desc: "Phased-occupancy protection — temporary partitions, dust control and after-hours work during evening performances", cost: 574200, days: 2, status: "Pending" },
+        { id: "CO-007", desc: "Premium for accelerated heritage masonry delivery from a specialist local supplier (expedite fee)", cost: 406800, days: -4, status: "Rejected" }
       ];
 
       var RFIS = [
-        { id: "RFI-001", subject: "Confirm work-zone boundary and safe egress during Phase 1 evening programs", party: "Architect", issued: "Jun 2, 2027", due: "Jun 9, 2027", status: "Answered" },
-        { id: "RFI-002", subject: "Heritage façade fastening details for the new entrance canopy", party: "Heritage Consultant", issued: "Jun 20, 2027", due: "Jun 27, 2027", status: "Answered" },
-        { id: "RFI-003", subject: "Canopy anchor locations conflict with existing masonry at grid C4", party: "Structural Engineer", issued: "Jul 14, 2027", due: "Jul 21, 2027", status: "Answered" },
+        { id: "RFI-001", subject: "Confirm work-zone boundary and safe egress during Phase 1 evening programmes", party: "Architect", issued: "Jun 2, 2027", due: "Jun 9, 2027", status: "Answered" },
+        { id: "RFI-002", subject: "Heritage brick façade fixing details for the new entrance canopy", party: "Heritage Consultant", issued: "Jun 20, 2027", due: "Jun 27, 2027", status: "Answered" },
+        { id: "RFI-003", subject: "Canopy anchor locations conflict with existing brickwork at grid C4", party: "Structural Engineer", issued: "Jul 14, 2027", due: "Jul 21, 2027", status: "Answered" },
         { id: "RFI-004", subject: "AV and power distribution layout for the performance hall", party: "Electrical Consultant", issued: "Aug 3, 2027", due: "Aug 10, 2027", status: "Answered" },
         { id: "RFI-005", subject: "Temporary partitions, dust control and noise limits while the centre remains open", party: "Owner", issued: "Sep 8, 2027", due: "Sep 15, 2027", status: "Answered" },
         { id: "RFI-006", subject: "Gallery lighting track locations vs. existing ceiling structure", party: "Architect", issued: "Sep 29, 2027", due: "Oct 6, 2027", status: "Answered" },
         { id: "RFI-007", subject: "Acoustic panel layout around sprinkler, lighting and AV lines in the hall", party: "Mechanical Consultant", issued: "Oct 12, 2027", due: "Oct 19, 2027", status: "Open" },
-        { id: "RFI-008", subject: "Exterior signage power feed and heritage mounting restrictions", party: "Electrical Consultant", issued: "Oct 18, 2027", due: "Oct 25, 2027", status: "Overdue" }
+        { id: "RFI-008", subject: "Battery room ventilation and City Power feed-in approval for the rooftop solar array", party: "Electrical Consultant", issued: "Oct 18, 2027", due: "Oct 25, 2027", status: "Overdue" }
       ];
 
       /* ================= Helpers ================= */
       function money(v) {
         var sign = v < 0 ? "−" : "";
-        return sign + "$" + Math.abs(Math.round(v)).toLocaleString("en-CA");
+        return sign + "R" + Math.abs(Math.round(v)).toLocaleString("en-ZA");
       }
-      function moneyM(v) { return "$" + (v / 1000000).toFixed(2) + "M"; }
+      function moneyM(v) { return "R" + (v / 1000000).toFixed(2) + "M"; }
       function el(tag, cls, html) {
         var n = document.createElement(tag);
         if (cls) n.className = cls;
@@ -618,7 +622,7 @@
       (function renderChart() {
         var W = 780, H = 430, ML = 66, MR = 18, MT = 22, MB = 46;
         var plotW = W - ML - MR, plotH = H - MT - MB;
-        var YMAX = 5200000;
+        var YMAX = 96000000;
         function X(i) { return ML + plotW * i / (MONTHS.length - 1); }
         function Y(v) { return MT + plotH * (1 - v / YMAX); }
         function pathFor(series) {
@@ -636,10 +640,10 @@
         var cAmber = css.getPropertyValue("--amber-strong").trim();
         var s = '<svg class="chart-svg" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="S-curve chart: planned value, earned value and actual cost from May 2027 to February 2028">';
         // gridlines + y labels
-        for (var g = 0; g <= 5000000; g += 1000000) {
+        for (var g = 0; g <= 90000000; g += 15000000) {
           var y = Y(g);
           s += '<line x1="' + ML + '" y1="' + y + '" x2="' + (W - MR) + '" y2="' + y + '" stroke="' + cGrid + '" stroke-width="1"/>';
-          s += '<text x="' + (ML - 10) + '" y="' + (y + 4) + '" text-anchor="end" font-size="11.5" fill="' + cMuted + '" font-family="IBM Plex Mono, monospace">' + (g === 0 ? "$0" : "$" + (g / 1000000) + "M") + "</text>";
+          s += '<text x="' + (ML - 10) + '" y="' + (y + 4) + '" text-anchor="end" font-size="11.5" fill="' + cMuted + '" font-family="IBM Plex Mono, monospace">' + (g === 0 ? "R0" : "R" + (g / 1000000) + "M") + "</text>";
         }
         // x labels
         MONTHS.forEach(function (m, i) {
@@ -795,7 +799,7 @@
           var tr = document.createElement("tr");
           var tdId = el("td", "id", esc(c.id)); tdId.setAttribute("data-label", "ID");
           var tdDesc = el("td", "desc-cell", esc(c.desc)); tdDesc.setAttribute("data-label", "Description");
-          var tdCost = el("td", "num " + (c.cost < 0 ? "neg" : "pos"), (c.cost < 0 ? "−$" : "+$") + Math.abs(c.cost).toLocaleString("en-CA"));
+          var tdCost = el("td", "num " + (c.cost < 0 ? "neg" : "pos"), (c.cost < 0 ? "−R" : "+R") + Math.abs(c.cost).toLocaleString("en-ZA"));
           tdCost.setAttribute("data-label", "Cost impact");
           var daysTxt = c.days === 0 ? "—" : (c.days > 0 ? "+" + c.days + " days" : c.days + " days");
           var tdDays = el("td", "num", daysTxt); tdDays.setAttribute("data-label", "Schedule");
@@ -807,7 +811,7 @@
         foot.innerHTML = "";
         var ftr = document.createElement("tr");
         var f1 = el("td", "", "Approved total"); f1.colSpan = 2;
-        var f2 = el("td", "num", "+$" + approvedCO.toLocaleString("en-CA"));
+        var f2 = el("td", "num", "+R" + approvedCO.toLocaleString("en-ZA"));
         var f3 = el("td", "num", "+5 days");
         var f4 = el("td", "", '<span class="pill teal">Revised budget ' + money(revisedBudget) + "</span>");
         ftr.appendChild(f1); ftr.appendChild(f2); ftr.appendChild(f3); ftr.appendChild(f4);
@@ -816,9 +820,9 @@
       (function renderCOSummary() {
         var cells = [
           { k: "Original Budget", v: money(BAC), d: "Approved at contract award" },
-          { k: "Approved Changes", v: "+$" + approvedCO.toLocaleString("en-CA"), d: CHANGE_ORDERS.filter(function (c) { return c.status === "Approved"; }).length + " change orders" },
+          { k: "Approved Changes", v: "+R" + approvedCO.toLocaleString("en-ZA"), d: CHANGE_ORDERS.filter(function (c) { return c.status === "Approved"; }).length + " change orders" },
           { k: "Revised Budget", v: money(revisedBudget), d: "+" + (approvedCO / BAC * 100).toFixed(1) + "% vs. original" },
-          { k: "Pending Exposure", v: "$" + pendingCO.toLocaleString("en-CA"), d: "2 changes awaiting a decision" }
+          { k: "Pending Exposure", v: "R" + pendingCO.toLocaleString("en-ZA"), d: "2 changes awaiting a decision" }
         ];
         var host = document.getElementById("coSummary");
         cells.forEach(function (c) {
